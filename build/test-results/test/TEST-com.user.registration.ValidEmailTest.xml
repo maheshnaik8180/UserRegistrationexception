@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.user.registration.ValidEmailTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-03-07T17:53:37" hostname="DESKTOP-O4620L9" time="0.013">
+  <properties/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[0]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[1]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[2]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[3]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[4]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[5]" classname="com.user.registration.ValidEmailTest" time="0.001"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[6]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[7]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[8]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[9]" classname="com.user.registration.ValidEmailTest" time="0.001"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[10]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[11]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[12]" classname="com.user.registration.ValidEmailTest" time="0.002"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[13]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <testcase name="givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult[14]" classname="com.user.registration.ValidEmailTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
