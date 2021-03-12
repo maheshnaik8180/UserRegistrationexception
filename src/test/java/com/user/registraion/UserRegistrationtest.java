@@ -79,6 +79,27 @@ private UserRegistration person ;
         }
     }
 
+     @Test
+     public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
+        try {
+
+            Assert.assertEquals(true, UserRegistration.isMobileNumberValid("91 8210029078"));
+        }catch(Exception e) {
+        System.out.println("Exception occured is " + e);
+        }
+        }
+
+@Test
+     public void givenPhoneNumber_WhenNotProper_ShouldReturnTrue() {
+    try {
+
+        Assert.assertEquals(false, UserRegistration.isMobileNumberValid("918210029078"));
+    }catch(Exception e) {
+        System.out.println("Exception occured is " + e);
+    }
+}
+
+
 
 }
 
