@@ -13,13 +13,12 @@ private UserRegistration person ;
     public void initalize (){
     person = new UserRegistration();
     }
+
+
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
         try {
-
-
-
-            Assert.assertEquals(true, person.isFirstNamevalid("Mahesh"));
+            Assert.assertEquals(true, UserRegistration.isFirstNamevalid("Mahesh"));
         }catch(Exception e) {
             System.out.println("Exception occured is " + e);
         }
@@ -30,7 +29,7 @@ private UserRegistration person ;
     public void givenFirstName_WhenShort_ShouldReturnTrue() {
         try {
 
-            Assert.assertEquals(false, person.isFirstNamevalid("Ma"));
+            Assert.assertEquals(false, UserRegistration.isFirstNamevalid("Ma"));
         }catch(Exception e) {
             System.out.println("Exception occured is " + e);
         }
@@ -43,7 +42,7 @@ private UserRegistration person ;
     public void givenLastName_WhenProper_ShouldReturnTrue() {
         try {
 
-            Assert.assertEquals(true, person.isLastNameValid("Naik"));
+            Assert.assertEquals(true, UserRegistration.isLastNameValid("Naik"));
         }catch(Exception e) {
             System.out.println("Exception occured is " + e);
         }
@@ -54,7 +53,7 @@ private UserRegistration person ;
     public void givenLastName_WhenShort_ShouldReturnTrue() {
         try {
 
-            Assert.assertEquals(false, person.isLastNameValid("Na"));
+            Assert.assertEquals(false, UserRegistration.isLastNameValid("Na"));
         }catch(Exception e) {
             System.out.println("Exception occured is " + e);
         }
@@ -64,7 +63,7 @@ private UserRegistration person ;
     public void givenEmail_WhenProper_ShouldReturnTrue() {
         try {
 
-            Assert.assertEquals(true, person.isEmailValid("abc.xyz@gmail.com"));
+            Assert.assertEquals(true, UserRegistration.isEmailValid("abc.xyz@gmail.com"));
         }catch(Exception e) {
             System.out.println("Exception occured is " + e);
         }
@@ -74,7 +73,7 @@ private UserRegistration person ;
     public void givenEmail_WhenShort_ShouldReturnTrue() {
         try {
 
-            Assert.assertEquals(false, person.isEmailValid("abc..xyz@gmail.com"));
+            Assert.assertEquals(false, UserRegistration.isEmailValid("abc..xyz@gmail.com"));
         }catch(Exception e) {
             System.out.println("Exception occured is " + e);
         }
@@ -84,7 +83,7 @@ private UserRegistration person ;
      public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
         try {
 
-            Assert.assertEquals(true, person.isMobileNumberValid("91 8210029078"));
+            Assert.assertEquals(true, UserRegistration.isMobileNumberValid("91 8210029078"));
         }catch(Exception e) {
         System.out.println("Exception occured is " + e);
         }
@@ -94,7 +93,7 @@ private UserRegistration person ;
      public void givenPhoneNumber_WhenNotProper_ShouldReturnTrue() {
     try {
 
-        Assert.assertEquals(false, person.isMobileNumberValid("918210029078"));
+        Assert.assertEquals(false, UserRegistration.isMobileNumberValid("918210029078"));
     }catch(Exception e) {
         System.out.println("Exception occured is " + e);
     }
@@ -105,7 +104,7 @@ private UserRegistration person ;
      public void givenPassword_WhenProper_ShouldReturnTrue() {
         try {
 
-            Assert.assertEquals(true, person.isPasswordValid("Asad@12Sad"));
+            Assert.assertEquals(true, UserRegistration.isPasswordValid("Asad@12Sad"));
         }catch(Exception e) {
             System.out.println("Exception occured is " + e);
         }
@@ -116,7 +115,7 @@ private UserRegistration person ;
      public void givenPassword_WhenNotProper_ShouldReturnTrue() {
         try {
 
-            Assert.assertEquals(false, person.isPasswordValid("AdjgdsS512S"));
+            Assert.assertEquals(false, UserRegistration.isPasswordValid("AdjgdsS512S"));
         }catch(Exception e) {
             System.out.println("Exception occured is " + e);
         }
