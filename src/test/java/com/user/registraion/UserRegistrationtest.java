@@ -100,6 +100,25 @@ private UserRegistration person ;
 }
 
 
+    @Test
+     public void givenPassword_WhenProper_ShouldReturnTrue() {
+        try {
 
+            Assert.assertEquals(true, UserRegistration.isPasswordValid("Asad@12Sad"));
+        }catch(Exception e) {
+            System.out.println("Exception occured is " + e);
+        }
+    }
+
+
+    @Test
+     public void givenPassword_WhenNotProper_ShouldReturnTrue() {
+        try {
+
+            Assert.assertEquals(false, UserRegistration.isPasswordValid("AdjgdsS512S"));
+        }catch(Exception e) {
+            System.out.println("Exception occured is " + e);
+        }
+    }
 }
 
