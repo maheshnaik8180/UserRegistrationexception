@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.user.registraion.UserRegistrationtest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-08T17:35:05" hostname="DESKTOP-O4620L9" time="0.019">
+<testsuite name="com.user.registraion.UserRegistrationtest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-03-12T08:32:11" hostname="DESKTOP-O4620L9" time="0.011">
   <properties/>
-  <testcase name="givenFirstName_WhenProper_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.019"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="givenFirstName_WhenProper_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.002"/>
+  <testcase name="givenLastName_WhenShort_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.003"/>
+  <testcase name="givenPassword_WhenNotProper_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.0"/>
+  <testcase name="givenFirstName_WhenShort_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.001"/>
+  <testcase name="givenEmail_WhenShort_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.0"/>
+  <testcase name="givenLastName_WhenProper_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.0"/>
+  <testcase name="givenPassword_WhenProper_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.0"/>
+  <testcase name="givenPhoneNumber_WhenProper_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.0"/>
+  <testcase name="givenPhoneNumber_WhenNotProper_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.0"/>
+  <testcase name="givenEmail_WhenProper_ShouldReturnTrue" classname="com.user.registraion.UserRegistrationtest" time="0.001"/>
+  <system-out><![CDATA[Exception occured is com.user.registration.UserRegistrationException: Invalid Last Name
+Exception occured is com.user.registration.UserRegistrationException: Invalid Password
+Exception occured is com.user.registration.UserRegistrationException: Invalid First Name
+Exception occured is com.user.registration.UserRegistrationException: Invalid Email
+Exception occured is com.user.registration.UserRegistrationException: Invalid Mobile Number
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

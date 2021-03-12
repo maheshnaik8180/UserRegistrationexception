@@ -1,0 +1,6 @@
+YException occured is com.user.registration.UserRegistrationException: Invalid Last Name
+XException occured is com.user.registration.UserRegistrationException: Invalid Password
+ZException occured is com.user.registration.UserRegistrationException: Invalid First Name
+UException occured is com.user.registration.UserRegistrationException: Invalid Email
+
+]Exception occured is com.user.registration.UserRegistrationException: Invalid Mobile Number
