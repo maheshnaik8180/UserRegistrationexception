@@ -59,5 +59,26 @@ private UserRegistration person ;
         }
     }
 
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue() {
+        try {
+
+            Assert.assertEquals(true, UserRegistration.isEmailValid("abc.xyz@gmail.com"));
+        }catch(Exception e) {
+            System.out.println("Exception occured is " + e);
+        }
+    }
+
+    @Test
+    public void givenEmail_WhenShort_ShouldReturnTrue() {
+        try {
+
+            Assert.assertEquals(false, UserRegistration.isEmailValid("abc..xyz@gmail.com"));
+        }catch(Exception e) {
+            System.out.println("Exception occured is " + e);
+        }
+    }
+
+
 }
 
