@@ -2,122 +2,154 @@ package com.user.registraion;
 
 
 import com.user.registration.UserRegistration;
+import com.user.registration.UserRegistrationException;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class UserRegistrationtest {
-private UserRegistration person ;
-
-    @Before
-    public void initalize (){
-    person = new UserRegistration();
-    }
-
-
+    //---------------------First Name Null Exception Test  -------------------------------- //
     @Test
-    public void givenFirstName_WhenProper_ShouldReturnTrue() {
+    public void givenFirstNameAsNull_ReturnException()
+    {
+        UserRegistration check = new UserRegistration();
         try {
-            Assert.assertEquals(true, UserRegistration.isFirstNamevalid("Mahesh"));
-        }catch(Exception e) {
-            System.out.println("Exception occured is " + e);
+            boolean firstName = check.checkFirstName(null);
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegistrationException.class);
+            Assert.assertEquals(true, firstName);
+        } catch (UserRegistrationException exception) {
+            Assert.assertEquals(UserRegistrationException.ExceptionType.NullEnter, exception.type);
         }
     }
-
-
+    //---------------------First Name Empty Exception Test --------------------------------
     @Test
-    public void givenFirstName_WhenShort_ShouldReturnTrue() {
+    public void givenFirstNameAsEmpty_ReturnException()
+    {
+        UserRegistration check = new UserRegistration();
         try {
-
-            Assert.assertEquals(false, UserRegistration.isFirstNamevalid("Ma"));
-        }catch(Exception e) {
-            System.out.println("Exception occured is " + e);
+            boolean firstName = check.checkFirstName("");
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegistrationException.class);
+            Assert.assertEquals(true, firstName);
+        } catch (UserRegistrationException exception) {
+            Assert.assertEquals(UserRegistrationException.ExceptionType.EmptyEnter, exception.type);
         }
     }
 
-
-
-
+    //---------------------Last Name Null Exception Test  --------------------------------
     @Test
-    public void givenLastName_WhenProper_ShouldReturnTrue() {
+    public void givenLastNameAsNull_ReturnException()
+    {
+        UserRegistration check = new UserRegistration();
         try {
-
-            Assert.assertEquals(true, UserRegistration.isLastNameValid("Naik"));
-        }catch(Exception e) {
-            System.out.println("Exception occured is " + e);
+            boolean lastName = check.checkLastName(null);
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegistrationException.class);
+            Assert.assertEquals(true, lastName);
+        } catch (UserRegistrationException exception) {
+            Assert.assertEquals(UserRegistrationException.ExceptionType.NullEnter, exception.type);
         }
     }
-
-
+    //---------------------Last Name Empty Exception Test --------------------------------
     @Test
-    public void givenLastName_WhenShort_ShouldReturnTrue() {
+    public void givenLastNameAsEmpty_ReturnException()
+    {
+        UserRegistration check = new UserRegistration();
         try {
-
-            Assert.assertEquals(false, UserRegistration.isLastNameValid("Na"));
-        }catch(Exception e) {
-            System.out.println("Exception occured is " + e);
+            boolean lastName = check.checkLastName("");
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegistrationException.class);
+            Assert.assertEquals(true, lastName);
+        } catch (UserRegistrationException exception) {
+            Assert.assertEquals(UserRegistrationException.ExceptionType.EmptyEnter, exception.type);
         }
     }
 
+    //---------------------Email Null Exception Test  --------------------------------
     @Test
-    public void givenEmail_WhenProper_ShouldReturnTrue() {
+    public void givenEmailAsNull_ReturnException()
+    {
+        UserRegistration check = new UserRegistration();
         try {
-
-            Assert.assertEquals(true, UserRegistration.isEmailValid("abc.xyz@gmail.com"));
-        }catch(Exception e) {
-            System.out.println("Exception occured is " + e);
+            boolean email = check.checkEmail(null);
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegistrationException.class);
+            Assert.assertEquals(true, email);
+        } catch (UserRegistrationException exception) {
+            Assert.assertEquals(UserRegistrationException.ExceptionType.NullEnter, exception.type);
         }
     }
-
+    //---------------------Email Empty Exception Test --------------------------------
     @Test
-    public void givenEmail_WhenShort_ShouldReturnTrue() {
+    public void givenEmailAsEmpty_ReturnException()
+    {
+        UserRegistration check = new UserRegistration();
         try {
-
-            Assert.assertEquals(false, UserRegistration.isEmailValid("abc..xyz@gmail.com"));
-        }catch(Exception e) {
-            System.out.println("Exception occured is " + e);
+            boolean email = check.checkEmail("");
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegistrationException.class);
+            Assert.assertEquals(true, email);
+        } catch (UserRegistrationException exception) {
+            Assert.assertEquals(UserRegistrationException.ExceptionType.EmptyEnter, exception.type);
         }
     }
 
-     @Test
-     public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
-        try {
-
-            Assert.assertEquals(true, UserRegistration.isMobileNumberValid("91 8210029078"));
-        }catch(Exception e) {
-        System.out.println("Exception occured is " + e);
-        }
-        }
-
-@Test
-     public void givenPhoneNumber_WhenNotProper_ShouldReturnTrue() {
-    try {
-
-        Assert.assertEquals(false, UserRegistration.isMobileNumberValid("918210029078"));
-    }catch(Exception e) {
-        System.out.println("Exception occured is " + e);
-    }
-}
-
-
+    //---------------------Mobile number Null Exception Test  --------------------------------
     @Test
-     public void givenPassword_WhenProper_ShouldReturnTrue() {
+    public void givenMobileAsNull_ReturnException()
+    {
+        UserRegistration check = new UserRegistration();
         try {
-
-            Assert.assertEquals(true, UserRegistration.isPasswordValid("Asad@12Sad"));
-        }catch(Exception e) {
-            System.out.println("Exception occured is " + e);
+            boolean mobile = check.checkMobile(null);
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegistrationException.class);
+            Assert.assertEquals(true, mobile);
+        } catch (UserRegistrationException exception) {
+            Assert.assertEquals(UserRegistrationException.ExceptionType.NullEnter, exception.type);
+        }
+    }
+    //---------------------Mobile Number Empty Exception Test --------------------------------
+    @Test
+    public void givenMobileAsEmpty_ReturnException()
+    {
+        UserRegistration check = new UserRegistration();
+        try {
+            boolean mobile = check.checkMobile("");
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegistrationException.class);
+            Assert.assertEquals(true, mobile);
+        } catch (UserRegistrationException exception) {
+            Assert.assertEquals(UserRegistrationException.ExceptionType.EmptyEnter, exception.type);
         }
     }
 
-
+    //---------------------Password Null Exception Test  --------------------------------
     @Test
-     public void givenPassword_WhenNotProper_ShouldReturnTrue() {
+    public void givenPasswordAsNull_ReturnException()
+    {
+        UserRegistration check = new UserRegistration();
         try {
-
-            Assert.assertEquals(false, UserRegistration.isPasswordValid("AdjgdsS512S"));
-        }catch(Exception e) {
-            System.out.println("Exception occured is " + e);
+            boolean password = check.checkPasswordRule(null);
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegistrationException.class);
+            Assert.assertEquals(true, password);
+        } catch (UserRegistrationException exception) {
+            Assert.assertEquals(UserRegistrationException.ExceptionType.NullEnter, exception.type);
+        }
+    }
+    //---------------------Password Number Empty Exception Test --------------------------------
+    @Test
+    public void givenPasswordAsEmpty_ReturnException()
+    {
+        UserRegistration check = new UserRegistration();
+        try {
+            boolean password = check.checkPasswordRule("");
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegistrationException.class);
+            Assert.assertEquals(true, password);
+        } catch (UserRegistrationException exception) {
+            Assert.assertEquals(UserRegistrationException.ExceptionType.EmptyEnter, exception.type);
         }
     }
 }

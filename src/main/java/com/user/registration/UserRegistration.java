@@ -1,85 +1,129 @@
 package com.user.registration;
+
+import com.sun.xml.internal.ws.api.model.ExceptionType;
+
 import java.util.regex.Pattern;
 
+//----Functional Interface for lambda-----//
+@FunctionalInterface
+interface UserAccess
+{
+    boolean matchChecker( String pattern,String name);
+}
 public class UserRegistration {
 
-        public String email2Test;
+    //----------User Registration Pattern-----------------------------//
+    String firstNamePattern = "^[A-Z]{1}[a-z]{2,}$";
+    String lastNamePattern = "^[A-Z]{1}[a-z]{2,}$";
+    String emailPattern = "^[a-z0-9]{3,}+([_+-.][a-z0-9]+)?(@[a-z0-9]+)([.][a-z]{2,4})([.][a-z]{2})?$";
+    String mobilePattern = "^[0-9]{2}[ ][0-9]{10}$";
+    String passwordPattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*.!@#$%^&(){}:;<>?/~_+-=|\\]]).{8,}$";
 
-       boolean validateEmail(String email2Test){
-               return false;
-       }
+    //-------------- Lambda Function------------------------------------------------------//
+    UserAccess userAccess = Pattern::matches;
 
-        public static boolean isFirstNamevalid(String firstName) throws UserRegistrationException {
+    //UserAccess userAccess = (String pattern, String name) -> Pattern.matches(pattern, name);
 
-                if (Pattern.matches("^[A-Z]{1}[a-zA-Z]{2,}$", firstName))
-                        return true;
+    public boolean checkFirstName(String firstName) throws UserRegistrationException
+    {
+        try
+        {
+            if (firstName.isEmpty() ) throw new UserRegistrationException("! Enter Value Is Empty !" , ExceptionType.EmptyEnter);
+            {
+                //-------------Check valid or Not-----
+                if (userAccess.matchChecker(firstNamePattern,firstName))
+                    System.out.println(" * Valid First Name * ");
                 else
-                        throw new UserRegistrationException("Invalid First Name");
-        }
+                    System.out.println(" * InValid First Name * ");
+                return userAccess.matchChecker(firstNamePattern,firstName);
+            }
 
-        public static boolean isLastNameValid(String lastName) throws UserRegistrationException {
-                if (Pattern.matches("^[A-Z]{1}[a-zA-Z]{2,}$", lastName))
-                        return true;
+        }
+        catch (NullPointerException exception)
+        {
+            throw new UserRegistrationException(" ! Enter null ! ", ExceptionType.NullEnter);
+        }
+    }
+
+    public boolean checkLastName(String lastName)throws UserRegistrationException
+    {
+        try {
+            if (lastName.isEmpty())throw new UserRegistrationException("! Enter Value Is Empty !", EmptyEnter);
+            {
+                //-------------Check valid or Not-----
+                if (userAccess.matchChecker(lastNamePattern, lastName))
+                    System.out.println(" * Valid Last Name * ");
                 else
-                        throw new UserRegistrationException("Invalid Last Name");
+                    System.out.println(" * InValid Last Name * ");
+                return userAccess.matchChecker(lastNamePattern, lastName);
+            }
         }
+        catch (NullPointerException exception)
+        {
+            throw new UserRegistrationException(" ! Enter null ! ", ExceptionType.NullEnter);
+        }
+    }
 
-        public static boolean isEmailValid(String email) throws UserRegistrationException {
-                if (Pattern.matches("^[a-zA-Z0-9]{3,}([\\.\\+\\-]?[a-zA-Z0-9]{3,})?[@][A-Za-z0-9]{1,}[.][A-Za-z]{2,4}[,]?([.][A-Za-z]{2,4}[.]?)?$", email))
-                        return true;
+    public boolean checkEmail(String emailId)throws UserRegistrationException
+    {
+
+        try {
+            if (emailId.isEmpty())throw new UserRegistrationException("! Enter Value Is Empty !", ExceptionType.EmptyEnter);
+            {
+                //-------------Check valid or Not-----
+                if (userAccess.matchChecker(emailPattern,emailId))
+                    System.out.println(" * Valid Email Address * ");
                 else
-                        throw new UserRegistrationException("Invalid Email");
-
+                    System.out.println(" * InValid Email Address * ");
+                return userAccess.matchChecker(emailPattern,emailId);
+            }
         }
+        catch (NullPointerException exception)
+        {
+            throw new UserRegistrationException(" ! Enter null ! ", ExceptionType.NullEnter);
+        }
+    }
 
-        public static boolean isMobileNumberValid(String mobile) throws UserRegistrationException {
-                if (Pattern.matches("^[9][1][\\s][6-9][0-9]{9}$", mobile))
-                        return true;
+    public boolean checkMobile(String mobileNumber)throws UserRegistrationException
+    {
+        try {
+            if (mobileNumber.isEmpty())throw new UserRegistrationException("! Enter Value Is Empty !", ExceptionType.EmptyEnter);
+            {
+                //-------------Check valid or Not-----
+                if (userAccess.matchChecker(mobilePattern,mobileNumber))
+                    System.out.println(" * Valid Mobile Number * ");
                 else
-                        throw new UserRegistrationException("Invalid Mobile Number");
+                    System.out.println(" * InValid Mobile Number * ");
+                return userAccess.matchChecker(mobilePattern,mobileNumber);
+            }
         }
+        catch (NullPointerException exception)
+        {
+            throw new UserRegistrationException(" ! Enter null ! ", ExceptionType.NullEnter);
+        }
+    }
 
-        public static boolean isPasswordValid(String password) throws UserRegistrationException {
-                if (Pattern.matches("^(?=.*[\\@\\#\\$\\%\\&\\_\\,\\.])(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$", password))
-                        return true;
+    public boolean checkPasswordRule(String passWord)throws UserRegistrationException
+    {
+
+        try {
+            if (passWord.isEmpty())throw new UserRegistrationException("! Enter Value Is Empty !", ExceptionType.EmptyEnter);
+            {
+                //-------------Check valid or Not-----
+                if (userAccess.matchChecker(passwordPattern,passWord))
+                    System.out.println(" * Valid Mobile Number * ");
                 else
-                        throw new UserRegistrationException("Invalid Password");
+                    System.out.println(" * InValid Mobile Number* ");
+                return userAccess.matchChecker(passwordPattern,passWord);
+            }
         }
-
-        public static void main(String[] args) {
-                String firstName = "mahesh";
-                String lastName = "naik";
-                String email = "abc.xyz@gmail.com";
-                String mobile = "91 8210029078";
-                String password = "Ahjgsd45@fj";
-                UserRegistration person = new UserRegistration();
-                try {
-                        isFirstNamevalid(firstName);
-                } catch (Exception e) {
-                        System.out.println("Exception occured is " + e);
-                }
-                try {
-                        isLastNameValid(lastName);
-                } catch (Exception e) {
-                        System.out.println("Exception occured is " + e);
-                }
-                try {
-                        isEmailValid(email);
-                } catch (Exception e) {
-                        System.out.println("Exception occured is " + e);
-                }
-                try {
-                        isMobileNumberValid(mobile);
-                } catch (Exception e) {
-                        System.out.println("Exception occured is " + e);
-                }
-                try {
-                        isPasswordValid(password);
-                } catch (Exception e) {
-                        System.out.println("Exception occured is " + e);
-                }
+        catch (NullPointerException exception)
+        {
+            throw new UserRegistrationException(" ! Enter null ! " ExceptionType.NullEnter);
+        }
+    }
         }
 
 
-}
+
 
